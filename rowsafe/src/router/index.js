@@ -7,31 +7,15 @@ import NewRide from "../views/NewRide.vue";
 import History from "../views/History.vue";
 
     const routeInfos = [
-        {
-            path : "/",
-            name: "Home",
-            component : Home
-        },
-        {
-            path : "/register",
-            name: "Register",
-            component : Register
-        },
-        {
-            path : "/login",
-            name: "Login",
-            component : Login
-        },
-        {
-            path : "/newride",
-            name: "NewRide",
-            component : NewRide
-        },
-        {
-            path : "/history",
-            name: "History",
-            component : History
-        },
+        { path : "/", redirect: "login" },
+        { path : "/home", component : Home },
+        { path : "/register", component : Register },
+        { path : "/login", component : Login },
+        { path : "/newride", component : NewRide },
+        { path : "/history", component : History },
+
+        // default redirect to home
+        { path: "/:pathMatch(.*)*", redirect: "/" }
     ];
     
     const router = createRouter({
